@@ -1,5 +1,9 @@
 pwd
 whoami
-mkdir linpeas
-cd linpeas
-pwd
+mkdir test
+ls
+touch test.txt
+ls
+mv test.txt test/
+ls
+mk dir linpeas

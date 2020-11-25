@@ -1,3 +1,4 @@
+from os import system
 import sys
 import os
 import paramiko 
@@ -17,6 +18,8 @@ port = 22
 username = creds[1]
 password = creds[2]
 
+print(payload)
+
 # ssh connection
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -24,9 +27,10 @@ ssh.connect(host, port, username, password)
 
 # payload all the things 
 for command in payload:
+    print(command)
     stdin, stdout, stderr = ssh.exec_command(command)
     time.sleep(1)
     lines = stdout.readlines()
-    print(lines)
+    print('Responce ' + lines)
 
-# ssh.close()
+ssh.close()
