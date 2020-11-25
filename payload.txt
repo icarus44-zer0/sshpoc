@@ -1,0 +1,5 @@
+pwd
+whoami
+mkdir linpeas
+cd linpeas
+pwd
